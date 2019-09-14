@@ -1,6 +1,9 @@
 <template>
-  <div class="hello">
-
+  <div class="map">
+    <div class="background-wrapper">
+      <div class="points">Visited: </div>
+      <img class="background" src="../assets/background.png" />
+    </div>
   </div>
 </template>
 
@@ -8,8 +11,12 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
-export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
+export default class MapComponent extends Vue {
+
+  public goToMarker(x: number, y: number) {
+    console.log(`goToMarker: x=${y}, y=${y}`);
+  }
+
 }
 </script>
 
