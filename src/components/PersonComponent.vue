@@ -4,14 +4,13 @@
     </div>
 </template>
 
-<script>
-import { Component, Prop, Vue } from "vue-property-decorator";
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class PersonComponent extends Vue {
-    
-}
 
+}
 </script>
 
 <style scoped lang="scss">
