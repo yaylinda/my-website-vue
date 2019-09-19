@@ -1,22 +1,30 @@
 <template>
   <div class="map">
     <div class="background-wrapper">
-      <div class="points">Visited: </div>
+      <div class="points">Visited:</div>
       <img class="background" src="../assets/background.png" />
+      <marker-component></marker-component>
+      <person-component></person-component>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import MarkerComponent from '@/components/MarkerComponent.vue';
+import PersonComponent from '@/components/PersonComponent.vue';
 
-@Component
+
+@Component({
+  components: {
+    MarkerComponent,
+    PersonComponent,
+  },
+})
 export default class MapComponent extends Vue {
-
   public goToMarker(x: number, y: number) {
     console.log(`goToMarker: x=${y}, y=${y}`);
   }
-
 }
 </script>
 
