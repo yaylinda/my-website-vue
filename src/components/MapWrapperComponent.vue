@@ -1,11 +1,11 @@
 <template>
-  <div class="map">
-    <div class="background-wrapper">
+  <div class="map-wrapper">
+    <div class="background">
       <div class="points">Visited:</div>
-      <img class="background" src="../assets/background.png" />
       <marker-component></marker-component>
       <person-component></person-component>
     </div>
+    
   </div>
 </template>
 
@@ -21,27 +21,24 @@ import PersonComponent from '@/components/PersonComponent.vue';
     PersonComponent,
   },
 })
-export default class MapComponent extends Vue {
+export default class MapWrapperComponent extends Vue {
   public goToMarker(x: number, y: number) {
     console.log(`goToMarker: x=${y}, y=${y}`);
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
+  .points {
+    position: absolute;
+  }
+
+  .background {
+    position: relative;
+    background-image: url("../assets/background.png");
+    height: 335px;
+    width: 562px;
+  }
+
 </style>

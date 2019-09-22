@@ -1,5 +1,6 @@
 <template>
     <div class="card-holder">
+        <card-component title="Select a POI"></card-component>
         <card-component title="Background"></card-component>
         <card-component title="Education"></card-component>
         <card-component title="Internships"></card-component>
@@ -25,8 +26,7 @@ export default class CardHolderComponent extends Vue {
 <style scoped lang="scss">
 
     .card-holder {
-        width: 562px;
-        height: 335px;
+      
     }
 
 </style>

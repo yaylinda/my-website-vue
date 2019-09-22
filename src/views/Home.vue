@@ -1,22 +1,25 @@
 <template>
   <div class="home">
-    <div class="column">
-      <map-component></map-component>      
+
+    <div id="item1" class="column">
+      <map-wrapper-component></map-wrapper-component>      
     </div>
-    <div class="column">
+
+    <div id="item2" class="column">
       <card-holder-component></card-holder-component>
     </div>
+
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import MapComponent from '@/components/MapComponent.vue';
+import MapWrapperComponent from '@/components/MapWrapperComponent.vue';
 import CardHolderComponent from '@/components/CardHolderComponent.vue';
 
 @Component({
   components: {
-    MapComponent,
+    MapWrapperComponent,
     CardHolderComponent,
   },
 })
@@ -26,10 +29,20 @@ export default class Home extends Vue {
 </script>
 
 <style scoped lang="scss">
+  #item1 {
+    grid-area: item1;
+  }
+
+  #item2 {
+    grid-area: item2;
+  }
+
   .home {
-    display: flex;
+    display: grid;
+    grid-template-areas: 'item1 item2';
   }
-  .column {
-    flex: 50%;
-  }
+
+  // .column {
+  //   border: 1px solid black; // TODO - remove this later
+  // }
 </style>

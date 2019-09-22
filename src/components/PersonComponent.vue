@@ -16,8 +16,9 @@ export default class PersonComponent extends Vue {
 <style scoped lang="scss">
 
     .person {
-        height: 24px;
-        width: 24px;
+        position: absolute;
+        z-index: 10;
+        background-size: contain;
     }
 
 </style>

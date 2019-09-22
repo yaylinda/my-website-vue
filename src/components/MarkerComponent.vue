@@ -18,10 +18,8 @@ export default class MarkerComponent extends Vue {
     .marker {
         height: 24px;
         width: 24px;
-    }
-
-    .gray {
-        // filter: grayscale();
+        z-index: 100;
+        position: absolute;
     }
 
 </style>
