@@ -1,5 +1,5 @@
 <template>
-    <div class="marker">
+    <div class="marker" :style="position" v-on:click="$emit('marker-click', position)">
         <img class="gray" src="../assets/circle-icon.svg" />
     </div>
 </template>
@@ -9,7 +9,8 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class MarkerComponent extends Vue {
-
+    @Prop() markerId!: string;
+    @Prop() position!: string;
 }
 </script>
 
@@ -20,6 +21,10 @@ export default class MarkerComponent extends Vue {
         width: 24px;
         z-index: 100;
         position: absolute;
+    }
+
+    .marker :hover {
+        cursor: pointer;
     }
 
 </style>
