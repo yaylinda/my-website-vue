@@ -1,5 +1,5 @@
 <template>
-    <div class="marker" :style="position" v-on:click="$emit('marker-click', position)">
+    <div class="marker" :style="position" v-on:click="$emit('marker-click', position, markerId)">
         <img class="gray" src="../assets/circle-icon.svg" />
     </div>
 </template>
@@ -9,8 +9,8 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class MarkerComponent extends Vue {
-    @Prop() markerId!: string;
-    @Prop() position!: string;
+    @Prop() public markerId!: string;
+    @Prop() public position!: string;
 }
 </script>
 

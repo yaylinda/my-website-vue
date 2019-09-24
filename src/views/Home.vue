@@ -2,11 +2,11 @@
   <div class="home">
 
     <div id="item1" class="column">
-      <map-wrapper-component></map-wrapper-component>      
+      <map-wrapper-component v-on:update-card="updateCard"></map-wrapper-component>      
     </div>
 
     <div id="item2" class="column">
-      <card-holder-component></card-holder-component>
+      <card-holder-component :activeCard="activeCard"></card-holder-component>
     </div>
 
   </div>
@@ -25,6 +25,12 @@ import CardHolderComponent from '@/components/CardHolderComponent.vue';
 })
 export default class Home extends Vue {
 
+  public activeCard: string = 'default';
+
+  public updateCard(markerId: string) {
+    console.log(`updateCard to markerId=${markerId}`);
+    this.activeCard = markerId;
+  }
 }
 </script>
 

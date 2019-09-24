@@ -25,11 +25,12 @@ import PersonComponent from '@/components/PersonComponent.vue';
 })
 export default class MapWrapperComponent extends Vue {
 
-  personPosition: string = 'top: 280px; left: 93px';
+  public personPosition: string = 'top: 280px; left: 93px';
 
-  goToMarker(position: string) {
-    console.log(`clicked on marker with position=${position}`);
+  public goToMarker(position: string, markerId: string) {
+    console.log(`clicked on marker with position=${position}, markerId=${markerId}`);
     this.personPosition = position;
+    this.$emit('update-card', markerId);
   }
 }
 </script>

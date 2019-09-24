@@ -1,11 +1,10 @@
 <template>
     <div class="card-holder">
-        <card-component title="Select a POI"></card-component>
-        <card-component title="Background"></card-component>
-        <card-component title="Education"></card-component>
-        <card-component title="Internships"></card-component>
-        <card-component title="At Capital One (Part I)"></card-component>
-        <card-component title="At Capital One (Part II)"></card-component>
+        <card-component :activeCard="activeCard" cardId="default" title="Select a POI"></card-component>
+        <card-component :activeCard="activeCard" cardId="childhood" title="Childhood"></card-component>
+        <card-component :activeCard="activeCard" cardId="education" title="Education"></card-component>
+        <card-component :activeCard="activeCard" cardId="internships" title="Internships"></card-component>
+        <card-component :activeCard="activeCard" cardId="capitalone" title="At Capital One"></card-component>
     </div>
 </template>
 
@@ -19,7 +18,7 @@ import CardComponent from '@/components/CardComponent.vue';
   },
 })
 export default class CardHolderComponent extends Vue {
-
+  @Prop() public activeCard!: string;
 }
 </script>
 
