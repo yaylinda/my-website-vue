@@ -1,12 +1,14 @@
 <template>
   <div class="map-wrapper">
     <div class="background">
-      <div class="points">Visited:</div>
+      <!-- <div class="points">Visited:</div> -->
       <marker-component markerId="childhood" position="top: 203px; left: 137px;" v-on:marker-click="goToMarker"></marker-component>
       <marker-component markerId="education" position="top: 145px; left: 233px;" v-on:marker-click="goToMarker"></marker-component>
       <marker-component markerId="internships" position="top: 187px; left: 353px;" v-on:marker-click="goToMarker"></marker-component>
       <marker-component markerId="capitalone" position="top: 161px; left: 433px;" v-on:marker-click="goToMarker"></marker-component>
-      <person-component :position="personPosition"></person-component>
+      <transition name="animate-person">
+        <person-component :position="personPosition"></person-component>
+      </transition>
     </div>
     
   </div>
@@ -31,6 +33,7 @@ export default class MapWrapperComponent extends Vue {
     console.log(`clicked on marker with position=${position}, markerId=${markerId}`);
     this.personPosition = position;
     this.$emit('update-card', markerId);
+
   }
 }
 </script>
@@ -39,6 +42,12 @@ export default class MapWrapperComponent extends Vue {
 
   .points {
     position: absolute;
+  }
+
+  .map-wrapper {
+    height: 335px;
+    width: 562px;
+    margin: 0;
   }
 
   .background {

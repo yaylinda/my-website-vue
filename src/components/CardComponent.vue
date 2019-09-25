@@ -1,6 +1,7 @@
 <template>
     <div class="card" v-show="activeCard === cardId">
         <div class="title">{{title}}</div>
+        <div class="subtitle">{{subtitle}}</div>
     </div>
 </template>
 
@@ -12,6 +13,7 @@ export default class CardComponent extends Vue {
     @Prop() private activeCard!: string;
     @Prop() private cardId!: string;
     @Prop() private title!: string;
+    @Prop() private subtitle!: string;
 }
 </script>
 

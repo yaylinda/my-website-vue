@@ -47,8 +47,4 @@ export default class Home extends Vue {
     display: grid;
     grid-template-areas: 'item1 item2';
   }
-
-  // .column {
-  //   border: 1px solid black; // TODO - remove this later
-  // }
 </style>
